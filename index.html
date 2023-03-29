@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+    width: 750px;
+    margin: 100px auto;
+    box-shadow: 0px 0px 10px 1px lightgray;
+    border-radius: 20px;
+}
+.card-top{
+    display: grid;
+    margin-bottom: -10px;
+    grid-template-columns: 40% 20% 20% 20%;
+}
+button{
+    margin: 20px 325px 0px;
+    padding: 7px 10px;
+    font-weight: bold;
+    color: white;
+    border: 0px solid ;
+    border-radius: 50px;
+    background-color: lightsteelblue;
+}
+button:hover{
+    cursor: pointer;
+    background-color: gray;
+    transition: 0.3s;
+}
+#summa{
+    padding: 5px 10px;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+.card-buttom{
+    display: grid;
+    grid-template-columns: 38% 18% 18% 18%;
+    gap: 1em;
+}
+select{
+    padding: 5px;
+    margin-left: 10px;
+}
+.card{
+    padding: 20px;
+}
+
+input{
+    padding: 5px;
+}
+#res1,
+#res2,
+#res3{
+    border: 0px solid;
+    padding: 10px;
+    height: 15px;
+    margin-top: -5px;
+    background-color: lavender;
+}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-top">
+            <h5>Введите сумму</h5>
+            <h5>KZT (tenge)</h5>
+            <h5>USD (dollar)</h5>
+            <h5>EUR (euro)</h5>
+        </div>
+        <div class="card-buttom">
+            <div>
+                <input id="summa">
+            <select id="option">
+            <option >KZT</option>
+            <option >USD</option>
+            <option >EUR</option>
+        </select>
+            </div>
+        <h5 id="res1"></h5>
+        <h5 id="res2"></h5>
+        <h5 id="res3"></h5>
+        </div>
+        <button id="btn">CALCULATE</button>
+    </div>
+    <script>
+        function change(event){
+            if(option.value=='KZT'){
+                res1.innerHTML = "-";
+                res2.innerHTML = Math.round(summa.value / 431);
+                res3.innerHTML = Math.round(summa.value / 509);
+            } else if(option.value=='USD'){
+                res1.innerHTML = Math.round(summa.value * 429);
+                res2.innerHTML = "-"
+                res3.innerHTML = Math.round(summa.value * 0.84283);
+            } else if(option.value=='EUR'){
+                res1.innerHTML = Math.round(summa.value * 507);
+                res2.innerHTML = Math.round(summa.value * 1.176)
+                res3.innerHTML = "-";
+            }
+        }
+        res1.value == "dawd"
+        btn.addEventListener('click', change);
+    </script>
+</body>
+</html>
